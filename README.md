@@ -47,6 +47,7 @@ The goal of this repository is to:
 
 ## 📁 Repository Structure
 
+```
 .
 ├── C/
 │ ├── td3/
@@ -58,7 +59,7 @@ The goal of this repository is to:
 │ └── td4/
 │
 └── README.md
-
+```
 
 ---
 
@@ -75,5 +76,5 @@ The goal of this repository is to:
 
 **Mohamed**  
 
-Bachelor in Applied Computer Science student
-Université Chouaïb Doukkali, El Jadida, Morocco
+- Bachelor in Applied Computer Science student
+- Université Chouaïb Doukkali, El Jadida, Morocco
