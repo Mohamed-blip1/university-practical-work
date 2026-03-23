@@ -1,6 +1,5 @@
-__version__ = "2.2.0"
+__version__ = "2.3.0"
 
-import os
 from enum import Enum
 from task_manager import TaskManager
 from task_manager import Choice
@@ -12,18 +11,18 @@ manager = TaskManager()
 CHOICE = Choice
 
 class Menu(Enum):
-        EXIT="0"
-        ADD="1"
-        LIST_ALL="2"
-        LIST_COMPLETED="3"
-        LIST_UNCOMPLETED="4"
-        SEARCH_BY_KEYWORD="5"
-        MARK="6"
-        EDITE="7"
-        DELETE="8"
-        SAVE="9"
-        LOAD="10"
-        MENU="m"
+        EXIT = "0"
+        ADD = "1"
+        LIST_ALL = "2"
+        LIST_COMPLETED = "3"
+        LIST_UNCOMPLETED = "4"
+        SEARCH_BY_KEYWORD = "5"
+        MARK = "6"
+        EDITE = "7"
+        DELETE = "8"
+        SAVE = "9"
+        LOAD = "10"
+        MENU = "m"
 
 
 def menu():
@@ -43,19 +42,26 @@ menu()
 while True:
     print()
     print("[m] Menu")
-    choice = input(">")
-    
+
+    user_input = input("> ").strip()
+    try:
+        choice = Menu(user_input)
+    except ValueError:
+        print("Error: Invalid Choice.")
+        continue
+
     match choice:
-        case Menu.MENU.value:
+        case Menu.MENU:
             menu()
-        case Menu.EXIT.value:
+
+        case Menu.EXIT:
                 if not manager.UP_TO_DATE:
                     exit_choice="3"
                     print("Warning: Unsaved changes!")
                     print("1. Save")
                     print("2. Discard")
                     print("3. Cancel")
-                    exit_choice = input(">")
+                    exit_choice = input("> ")
                     if exit_choice == "1":
                         manager.save_tasks(FILE_NAME)
                         print("✓ Data synchronized to disk.")
@@ -70,12 +76,12 @@ while True:
                 else:
                     break
 
-        case Menu.ADD.value:
+        case Menu.ADD:
             task_name = input("Enter task name: ").strip()
             if not task_name:
                 print("Empty task name not allowed!")
                 continue
-            
+
             priority = input("choose task priority (1-3): ")
             if not ("1" <= priority <= "3"):
                 print("Invalid priority!")
@@ -87,19 +93,19 @@ while True:
             else:
                 print("Task already exist!")
 
-        case Menu.LIST_ALL.value:
+        case Menu.LIST_ALL:
             if manager.tasks:
                 print(f"\n--- ({len(manager.tasks)}) Task ---")
-                
-                for task_name, info in manager.get_tasks(CHOICE.ALL.value):
+
+                for task_name, info in manager.get_tasks(CHOICE.ALL):
                     status = "✓ Completed" if info["done"] else "✗ Pending"
                     print(f"[{status}] {task_name}")
             else:
                 print("No taskes yet!")
 
-        case Menu.LIST_COMPLETED.value:
+        case Menu.LIST_COMPLETED:
             if manager.tasks:
-                completed_tasks = manager.get_tasks(CHOICE.COMPLETED.value)
+                completed_tasks = manager.get_tasks(CHOICE.COMPLETED)
 
                 if not completed_tasks:
                     print("No task has been completed yet!")
@@ -112,9 +118,9 @@ while True:
             else:
                 print("No taskes yet!")
 
-        case Menu.LIST_UNCOMPLETED.value:
+        case Menu.LIST_UNCOMPLETED:
             if manager.tasks:
-                uncompleted_tasks = manager.get_tasks(CHOICE.UNCOMPLETED.value)
+                uncompleted_tasks = manager.get_tasks(CHOICE.UNCOMPLETED)
 
                 if not uncompleted_tasks:
                     print("All tasks has been completed!")
@@ -127,7 +133,7 @@ while True:
             else:
                 print("No taskes yet!")
 
-        case Menu.SEARCH_BY_KEYWORD.value:
+        case Menu.SEARCH_BY_KEYWORD:
             keyword=input("Enter a keyword: ").strip()
 
             if not keyword:
@@ -144,7 +150,7 @@ while True:
                 status = "✓ Completed" if info["done"] else "✗ Pending"
                 print(f"[{status}] {task_name}")
 
-        case Menu.MARK.value:
+        case Menu.MARK:
             task_name = str(input("Enter task name: ")).strip()
 
             if manager.edit_task_status(task_name, True):
@@ -152,7 +158,7 @@ while True:
             else:
                 print("Task does not exist")
 
-        case Menu.EDITE.value:
+        case Menu.EDITE:
             old_name=input("Enter task name: ").strip()
             new_name=input("Enter a new name: ").strip()
 
@@ -165,7 +171,7 @@ while True:
             else:
                 print("Error: Could not rename. Either the task doesn't exist or the name is taken.")
 
-        case Menu.DELETE.value:
+        case Menu.DELETE:
             task_name=input("Enter task name: ").strip()
 
             task_data = manager.tasks.get(task_name)
@@ -188,20 +194,20 @@ while True:
             else:
                 print("Delete operation canceled.")
 
-        case Menu.SAVE.value:
-                
+        case Menu.SAVE:
+
                 if not manager.tasks:
                     confirm = input(f"Tasks list empty. Save anyway to clear file? (y/n): ").lower()
                     if confirm != 'y':
                         print("✗ Failed to save data.")
                         continue
-                
+
                 if manager.save_tasks(FILE_NAME):
                     print("✓ Data synchronized to disk.")
                 else:
                     print("✗ Failed to save data.")
 
-        case Menu.LOAD.value:
+        case Menu.LOAD:
 
             if manager.tasks:
                 print("Warning: unsaved data detected!")
@@ -215,8 +221,5 @@ while True:
             else:
                 print("✗ Failed to load data.")
                 print(f"Error: '{FILE_NAME}' file does not exist.")
-
-        case _:
-            print("Error: Invalid choice!")
 
 print()

@@ -5,9 +5,9 @@ class Choice(Enum):
     ALL = 0
     COMPLETED = 1
     UNCOMPLETED = 2
-    
+
 class TaskManager:
-    def __init__(self):    
+    def __init__(self):
         self.tasks={}
         self.keys_sorted_by_priority=[]
         self.SORTED=True
@@ -27,7 +27,7 @@ class TaskManager:
 
         return True
 
-    def get_tasks(self, choice :int) -> list:
+    def get_tasks(self, choice : Choice) -> list:
         """
         Choices are : ALL(0), COMPLETED(1), UNCOMPLETED(2)
         Returns [(task_name, info),...]
@@ -36,10 +36,10 @@ class TaskManager:
         self.refresh_keys()
         self.sort_keys()
 
-        if choice == Choice.ALL.value:
+        if choice == Choice.ALL:
             return [(task_name, self.tasks[task_name]) for _, task_name in self.keys_sorted_by_priority]
         else:
-            status = (choice == Choice.COMPLETED.value)
+            status = (choice == Choice.COMPLETED)
             return [(task_name, self.tasks[task_name]) for _, task_name in self.keys_sorted_by_priority
                                                         if  self.tasks[task_name]["done"]==status]
 
@@ -60,13 +60,13 @@ class TaskManager:
             self.SORTED=True
 
     def get_tasks_by_keyword(self, keyword: str):
-        
+
         self.refresh_keys()
         self.sort_keys()
 
         return [(task_name, self.tasks[task_name]) for _, task_name in self.keys_sorted_by_priority
                                                     if keyword.lower() in task_name.lower()]
-    
+
     def edit_task_status(self, task_name: str, new_status: bool) -> bool:
 
 
@@ -108,14 +108,14 @@ class TaskManager:
             return True
 
         return False
-    
+
     def save_tasks(self, FILE_NAME) -> bool:
 
         self.refresh_keys(force=True)
         self.sort_keys(force=True)
 
         with open(FILE_NAME,"w") as file:
-            for task_name, info in self.get_tasks(Choice.ALL.value): 
+            for task_name, info in self.get_tasks(Choice.ALL): 
                 file.write(task_name+":"+str(info["done"])+":"+str(info["priority"])+"\n")
 
         self.UP_TO_DATE=True
@@ -126,7 +126,7 @@ class TaskManager:
 
         if not os.path.exists(FILE_NAME):
             return False
-        
+
         self.tasks.clear()
         with open(FILE_NAME,"r") as file:
             for line in file:
@@ -139,7 +139,7 @@ class TaskManager:
 
         self.refresh_keys(force=True)
         self.sort_keys(force=True)
-        
+
         self.UP_TO_DATE=True
 
-        return True    
+        return True

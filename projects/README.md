@@ -7,7 +7,7 @@ This folder contains my programming projects during university.
 | Project        | Language | Version | Description              |
 |----------------|----------|---------|--------------------------|
 | Student Manager| Python   | 2.0.1   | Manage students & grades |
-| To-Do Manager  | Python   | 2.2.0   | Manage tasks             |
+| To-Do Manager  | Python   | 2.3.0   | Manage tasks             |
 
 ### Requirements
 - Python 3.14.2+

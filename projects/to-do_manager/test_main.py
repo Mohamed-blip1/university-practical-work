@@ -177,7 +177,7 @@ def test_get_tasks_all():
     manager.MODIFIED_ITEM = True
     manager.SORTED = False
 
-    getted_tasks = manager.get_tasks(Choice.ALL.value)
+    getted_tasks = manager.get_tasks(Choice.ALL)
 
     assert getted_tasks == [
         ("item1", {"done":False,"priority":1}),
@@ -206,7 +206,7 @@ def test_get_tasks_completed():
     manager.MODIFIED_ITEM = True
     manager.SORTED = False
 
-    getted_tasks = manager.get_tasks(Choice.COMPLETED.value)
+    getted_tasks = manager.get_tasks(Choice.COMPLETED)
 
     assert getted_tasks == [
         ("item2", {"done":True,"priority":2}),
@@ -235,7 +235,7 @@ def test_get_tasks_uncompleted():
     manager.MODIFIED_ITEM = True
     manager.SORTED = False
 
-    getted_tasks = manager.get_tasks(Choice.UNCOMPLETED.value)
+    getted_tasks = manager.get_tasks(Choice.UNCOMPLETED)
 
     assert getted_tasks == [
         ("item1", {"done":False,"priority":1}),

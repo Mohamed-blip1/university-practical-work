@@ -19,23 +19,24 @@ This repository contains my programming/electronics/exercises/exams and projects
 - `td_tp/` – TD/TP exercises
   - `c/` – C TDs
   - `python/` – Python TDs
-## 🛠 Languages Used
+
+## Languages Used
 
 - **C** (procedural programming, memory awareness)
 - **Python** (clean, readable implementations)
 
 ---
 
-## 🎯 Notes
+## Notes
 
-- These exercises are part of my university coursework.
+- Some exercises are part of my university coursework.
 - Code is written for learning purposes and clarity.
 - Some solutions may have multiple versions (C vs Python).
 
 
 ---
 
-## 👤 Author
+## Author
 
 **Mohamed**  
 
