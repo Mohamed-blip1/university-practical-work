@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Accueil</title>
+
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header>
+      <nav id="nav-bar">
+        <ul>
+          <li><a class="active" href="#">Accueil</a></li>
+          <li><a href="presentation.html">Presentation</a></li>
+          <li><a href="loisirs.html">Loisirs</a></li>
+          <li><a href="gallery.html">Gallery</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <article id="start">
+      <section>
+        <div id="clock">
+          <div id="dDate"></div>
+          <div id="dTime"></div>
+        </div>
+      </section>
+
+      <div id="setting">
+        <button id="mode-button" onclick="toggleLightMode()">Sombre</button>
+
+        <div id="color-buttons">
+          <button
+            id="color-button-purple"
+            onclick="toggleColor('purple')"
+          ></button>
+          <button
+            id="color-button-brown"
+            onclick="toggleColor('brown')"
+          ></button>
+          <button id="color-button-default" onclick="toggleColor('')"></button>
+        </div>
+      </div>
+
+      <article>
+        <div class="introduction">
+          <h1>Bienvenue sur mon site personnel</h1>
+          <p>
+            Je m’appelle Mohamed Bouharti, étudiant passionné en Informatique
+            Appliquée. Mon parcours académique me permet d'explorer
+            l'intersection entre la théorie informatique et ses applications
+            concrètes pour résoudre des défis technologiques actuels.<button
+              id="more-button"
+              class="more-less-light"
+              onclick="toggleMoreLess()"
+            >
+              more...
+            </button>
+          </p>
+
+          <p id="masked-p">
+            Toujours en quête de nouveaux apprentissages, je partage ici mes
+            projets et mon évolution dans l'univers du numérique.<button
+              id="less-button"
+              class="more-less-light"
+              onclick="toggleMoreLess()"
+            >
+              less...
+            </button>
+          </p>
+          <img src="images/moskit.jpg" alt="An illustrative image" />
+        </div>
+      </article>
+
+      <section class="inspquote">
+        <h3>Citation inspirante</h3>
+        <blockquote>
+          <b>En</b>: Every breath is a second chance<br /><b>Fr</b>: Chaque
+          respiration est une seconde chance
+        </blockquote>
+      </section>
+    </article>
+
+    <footer>
+      <hr />
+      <p>&copy; 2026 Mohamed Bouharti</p>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>

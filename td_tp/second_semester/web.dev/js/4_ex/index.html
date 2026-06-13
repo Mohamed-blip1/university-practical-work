@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+
+    <title>Exercice - 4</title>
+
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <h1>convertisseur de Monnaie</h1>
+
+    <div id="converterContainer">
+      <div id="startCurrencyContainer">
+        <input type="number" id="amount" name="amount" placeholder="Montant" />
+        <select id="startCurrency" name="startCurrency">
+          <option>Dollar</option>
+          <option>Euro</option>
+          <option>Dirham</option>
+          <option>Yen</option>
+        </select>
+      </div>
+
+      <div id="desCurrencyContainer">
+        <input
+          type="text"
+          id="result"
+          name="result"
+          placeholder="Result"
+          readonly
+        />
+
+        <select id="desCurrency" name="desCurrency">
+          <option>Dollar</option>
+          <option>Euro</option>
+          <option>Dirham</option>
+          <option>Yen</option>
+        </select>
+      </div>
+
+      <button onclick="convert()">Convert</button>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>

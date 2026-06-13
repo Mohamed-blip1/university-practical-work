@@ -1,0 +1,126 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+
+    <title>Exercice - 4</title>
+
+    <style>
+
+
+     body{
+         margin: 0;
+     }
+
+     h1{
+         text-align: center;
+     }
+
+     nav {
+         padding: 0px;
+         margin: 0;
+     }
+
+     nav ul{
+         display: flex;
+         flex-direction: row;
+
+         list-style-type: none;
+         gap: 10px;
+         justify-content: center;
+
+         margin: 0px 0;
+         padding: 10px;
+
+         background-color: #333;
+         color: white;
+     }
+
+     nav li{
+         font-family: Arial,sans-serif;
+
+         padding: 10px 15px;
+
+         cursor: pointer;
+         border-radius: 10px;
+
+         transition: 0.3s;
+     }
+
+     nav li.active{
+         background-color: green;
+     }
+
+     nav li:hover{
+         background-color: orange;
+         color: white;
+     }
+
+
+     .gallery {
+         margin: 12px auto;
+         padding: 0px;
+
+         display: grid;
+         grid-template-columns: repeat(3,1fr);
+         gap: 10px;
+
+         max-width : 900px;
+     }
+
+     div img{
+         width: 100%;
+         height: 100%;
+
+         cursor: pointer;
+
+         border-radius: 10px;
+         transition: 0.3s;
+     }
+
+     div img:hover{
+         scale: 1.05;
+     }
+
+
+     @media (max-width: 600px){
+         .gallery {
+             grid-template-columns: 1fr;
+         }
+
+         nav ul {
+        flex-direction: column;
+     gap: 15px;
+     align-items: center;
+         }
+
+
+    </style>
+
+
+  </head>
+
+  <body>
+    <nav>
+      <ul>
+        <li class="active">Accueil</li>
+        <li>Services</li>
+        <li>A propos</li>
+        <li>Contact</li>
+      </ul>
+    </nav>
+
+    <h1>Galerie d’images</h1>
+
+    <div class="gallery">
+        <img src="images/595450.jpg">
+        <img src="images/moskit.jpg">
+        <img src="images/snow_sun.jpg">
+        <img src="images/pexels-padrinan-5555920.jpg">
+        <img src="images/pexels-invisiblepower-1076885.jpg">
+        <img src="images/pexels-ian-panelo-35650887.jpg">
+    </div>
+
+    </div>
+  </body>
+</html>

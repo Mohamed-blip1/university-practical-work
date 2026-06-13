@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+
+    <title>Test d'affichage avec document.write</title>
+  </head>
+
+  <body>
+    <h2>Test d'affichage</h2>
+
+    <script>
+      document.write("<p>Test de la commande document.write réussi.</p>");
+
+      let age = Number(prompt("Enter your age:"));
+
+      console.log(age);
+
+      if (age >= 18) {
+        document.write("<p>Vous etes majeur.</p>");
+        alert("Vous etes majeur.");
+      } else {
+        document.write("<p>Vous etes mineur.</p>");
+        alert("Vous etes mineur.");
+      }
+    </script>
+  </body>
+</html>

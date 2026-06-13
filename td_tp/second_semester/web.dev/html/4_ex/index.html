@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+    <meta name="author" content="Mohamed Bouharti" />
+    <meta name="keywords" content="HTML, CSS, Web Development" />
+    <meta name="description" content="HTML tables" />
+    <title>HTML tables</title>
+    <style>
+      table {
+        width: 100%;
+        border: 1px solid black;
+        border-collapse: collapse;
+      }
+      td {
+        border: 1px solid black;
+        padding: 10px;
+        height: 50px;
+      }
+      .row1 {
+        background-color: yellow;
+        text-align: center;
+      }
+      .bg-green {
+        background-color: green;
+      }
+      .align-left {
+        text-align: left;
+      }
+      .align-center {
+        text-align: center;
+      }
+
+      .align-right-top {
+        text-align: right;
+        vertical-align: top;
+      }
+      .bg-blue {
+        background-color: blue;
+      }
+      .text-green {
+        color: green;
+      }
+      .bg-red {
+        background-color: red;
+      }
+      .bg-yellow {
+        background-color: yellow;
+        width: 50%;
+      }
+      .img-cell {
+        padding: 0;
+      }
+      img {
+        display: block;
+        width: 100%;
+        height: auto;
+      }
+    </style>
+  </head>
+  <body>
+    <table>
+      <tr>
+        <td colspan="3" class="row1">
+          cette colonne occupe toute la largeur du tableau, la couleur du fond
+          est jaune
+        </td>
+      </tr>
+
+      <tr class="bg-green">
+        <td class="align-left">alignement à gouche</td>
+        <td class="align-center">texte centré</td>
+        <td class="align-right-top">alignement à droite et en haut</td>
+      </tr>
+
+      <tr>
+        <td rowspan="2" class="bg-blue">Cette cellule occupe deux lignes</td>
+        <td class="text-green">écrire en vert</td>
+        <td>ici, rien de neuf</td>
+      </tr>
+
+      <tr class="bg-red">
+        <td>je n'ai pas besoin de définir que</td>
+        <td>deux cellules sur cette ligne</td>
+      </tr>
+
+      <tr>
+        <td colspan="2" class="bg-yellow">fusion de deux cellules</td>
+        <td class="img-cell">
+          <img src="images/rose.jpg" alt="Image of a rose" />
+        </td>
+      </tr>
+    </table>
+  </body>
+</html>

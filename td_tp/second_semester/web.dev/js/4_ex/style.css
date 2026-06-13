@@ -1,0 +1,54 @@
+body {
+    background-color: black;
+
+    color: white;
+}
+
+h1 {
+    text-align: center;
+}
+
+#converterContainer {
+    display: grid;
+    grid-temlate-columns: 1fr 1fr;
+
+    max-width: 400px;
+    margin: 20px auto;
+}
+
+#startCurrencyContainer {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+#desCurrencyContainer {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+#startCurrencyContainer input,
+#startCurrencyContainer select,
+#desCurrencyContainer input,
+#desCurrencyContainer select,
+button {
+    background-color: #333;
+    color: white;
+
+    border-radius: 5px;
+    border: 1px solid gray;
+}
+#startCurrencyContainer input:hover,
+#startCurrencyContainer select:hover,
+#desCurrencyContainer input:hover,
+#desCurrencyContainer select:hover,
+button:hover {
+    border: 1px solid white;
+}
+
+#startCurrencyContainer input:active,
+#startCurrencyContainer select:active,
+#desCurrencyContainer input:active,
+#desCurrencyContainer select:active,
+button:active {
+    border: 1px solid skyblue;
+}

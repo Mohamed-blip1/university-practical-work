@@ -1,0 +1,5 @@
+Ali;14
+Malak;11
+Youssef;12
+Meryem;9
+mohamed;20

@@ -16,14 +16,8 @@ This folder contains my programming projects during university.
 
 ### Compilation & Run
 
-### Python
 To run a Python project:
 
 ```bash
 python3 main.py
 ```
-
-### c
-```bash
-gcc main.c -o main
-./main

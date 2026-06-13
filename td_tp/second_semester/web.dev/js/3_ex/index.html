@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+
+    <title>Exercice - 3</title>
+
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <fieldset>
+      <legend>Info</legend>
+      <form>
+        <p>
+          <label for="name">Name: </label>
+          <input type="text" id="name" name="name" placeholder="Name" />
+        </p>
+        <p>
+          <label for="email">Email: </label>
+          <input type="email" id="email" name="email" placeholder="Email" />
+        </p>
+        <p>
+          <label for="password">Password: </label>
+          <input
+            type="password"
+            id="password"
+            name="password"
+            placeholder="password"
+          />
+        </p>
+        <p>
+          <label for="confirm">Confirm password: </label>
+          <input
+            type="password"
+            id="confirm"
+            name="confirm"
+            placeholder="confirm password"
+          />
+        </p>
+
+        <button type="button" onclick="validateForm()">Submit</button>
+      </form>
+    </fieldset>
+
+    <script src="script.js"></script>
+  </body>
+</html>

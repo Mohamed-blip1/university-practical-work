@@ -1,0 +1,8 @@
+# Vscode
+.vscode
+*.json
+
+#
+build
+.clang-format
+.dir-locals.el

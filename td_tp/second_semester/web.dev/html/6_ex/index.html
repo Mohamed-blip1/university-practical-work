@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+
+    <title>Formulair - Exercice 6</title>
+
+    <style>
+      label {
+        width: 90px;
+        display: inline-block;
+      }
+      .row {
+        margin-bottom: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <form
+      style="width: 600px"
+      action="https://httpbin.org/get"
+      method="get"
+      target="_blank"
+    >
+      <fieldset>
+        <legend>VOS COORDONNEES</legend>
+        <div class="row">
+          <label for="nom">nom:</label>
+          <input type="text" id="nom" name="nom" placeholder="Votre nom" />
+        </div>
+
+        <div class="row">
+          <label for="prenom">prenom:</label>
+          <input
+            type="text"
+            id="prenom"
+            name="prenom"
+            placeholder="Votre prenom"
+          />
+        </div>
+
+        <div class="row">
+          <label for="mail">mail:</label>
+          <input type="email" id="mail" name="mail" placeholder="Votre mail" />
+        </div>
+
+        <div class="row">
+          <label for="code">code:</label>
+          <input type="password" id="code" name="code" />
+        </div>
+
+        <div class="row">
+          <label for="homme">homme:</label>
+          <input type="radio" id="homme" name="sex" value="homme" />
+        </div>
+
+        <div class="row">
+          <label for="femme">femme:</label>
+          <input type="radio" id="femme" name="sex" value="femme" />
+        </div>
+
+        <div class="row">
+          <label for="pays">votre pays:</label>
+          <select id="pays" name="pays">
+            <option value="Maroc">Maroc</option>
+            <option value="autre">autre</option>
+          </select>
+        </div>
+      </fieldset>
+      <fieldset>
+        <legend>vos gouts</legend>
+        <div class="row">
+          <label for="pommes">pommes:</label>
+          <input type="checkbox" id="pommes" name="gouts" value="pommes" />
+        </div>
+
+        <div class="row">
+          <label for="poires">poires:</label>
+          <input type="checkbox" id="poires" name="gouts" value="poires" />
+        </div>
+
+        <div class="row">
+          <label for="msg">decrivez nous vos gouts en details:</label>
+          <textarea
+            id="msg"
+            name="details"
+            style="width: 300px; height: 60px"
+            placeholder="Exprimez vous ici ..."
+          ></textarea>
+        </div>
+      </fieldset>
+
+      <p style="margin-top: 0px; border: 1px solid black; padding: 10px">
+        <button type="submit">Envoyer</button>
+      </p>
+    </form>
+  </body>
+</html>

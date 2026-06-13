@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+
+    <title>Exercice - 4</title>
+
+    <style></style>
+
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body>
+    <header>
+      <nav id="nav-bar">
+        <ul>
+          <li><a href="index.html">Accueil</a></li>
+          <li><a href="presentation.html">Presentation</a></li>
+          <li><a href="loisirs.html">Loisirs</a></li>
+          <li><a class="active" href="gallery.html">Gallery</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <article id="start">
+      <section>
+        <div id="clock">
+          <div id="dDate"></div>
+          <div id="dTime"></div>
+        </div>
+      </section>
+
+      <div id="setting">
+        <button id="mode-button" onclick="toggleLightMode()">Sombre</button>
+
+        <div id="color-buttons">
+          <button
+            id="color-button-purple"
+            onclick="toggleColor('purple')"
+          ></button>
+          <button
+            id="color-button-brown"
+            onclick="toggleColor('brown')"
+          ></button>
+          <button id="color-button-default" onclick="toggleColor('')"></button>
+        </div>
+      </div>
+
+      <article class="gallery">
+        <h1>Galerie d’images</h1>
+
+        <div class="gallerygrid">
+          <img src="images/595450.jpg" />
+          <img src="images/moskit.jpg" />
+          <img src="images/snow_sun.jpg" />
+          <img src="images/pexels-padrinan-5555920.jpg" />
+          <img src="images/pexels-invisiblepower-1076885.jpg" />
+          <img src="images/pexels-ian-panelo-35650887.jpg" />
+        </div>
+      </article>
+    </article>
+
+    <footer>
+      <hr />
+      <p>&copy; 2026 Mohamed Bouharti</p>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>

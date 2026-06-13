@@ -1,0 +1,77 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>TP Sélecteurs CSS</title>
+    <style>
+      body {
+        font-family: Verdana, sans-serif;
+      }
+
+      h1,
+      h2 {
+        color: blue;
+      }
+
+      .info {
+        font-style: italic;
+      }
+
+      #important {
+        color: red;
+        font-weight: bold;
+      }
+
+      div p {
+        background-color: lightgray;
+      }
+
+      h2 + p {
+        text-decoration: underline;
+      }
+
+      li {
+        color: green;
+      }
+
+      li:first-child {
+        font-weight: bold;
+      }
+
+      li:nth-child(3) {
+        color: orange;
+        font-style: italic;
+      }
+
+      a {
+        color: purple;
+      }
+
+      a:hover {
+        color: red;
+      }
+    </style>
+  </head>
+  <body>
+    <h1 class="info">Titre principal</h1>
+    <p>Paragraphe introduction</p>
+    <p class="info">Paragraphe information</p>
+    <p id="important">Paragraphe important</p>
+    <div>
+      <p>Paragraphe dans div</p>
+      <p class="info">Autre paragraphe dans div</p>
+    </div>
+    <h2 class="section">Titre section 1</h2>
+    <p>Paragraphe section 1</p>
+
+    <h2 class="section">Titre section 2</h2>
+    <p>Paragraphe section 2</p>
+    <ul>
+      <li>Élément 1</li>
+      <li>Élément 2</li>
+      <li>Élément 3</li>
+    </ul>
+    <a href="#">Lien 1</a>
+    <a href="#">Lien 2</a>
+  </body>
+</html>

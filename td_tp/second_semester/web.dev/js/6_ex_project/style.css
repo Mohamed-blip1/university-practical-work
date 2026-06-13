@@ -1,0 +1,335 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f5e9e1;
+    /* background-color: #111; */
+    margin: 0;
+}
+
+html {
+    margin: 0;
+}
+
+body.darck {
+    font-family: Arial, sans-serif;
+    background-color: #111;
+    color: #f5e9e1;
+    margin: 0;
+}
+
+.add-hobbies {
+    width: 190px;
+    margin: 1px auto;
+}
+
+.add-hobbies input {
+    width: 130px;
+
+    background-color: lightgray;
+    border: 1px black solid;
+    border-radius: 5px;
+}
+
+.add-hobbies button {
+    background-color: lightgray;
+    border: 1px black solid;
+    border-radius: 5px;
+}
+
+#less-button {
+    display: none;
+    border: none;
+    font-size: 16px;
+    text-decoration: underline;
+
+    cursor: pointer;
+
+    background-color: transparent;
+    color: #999;
+}
+
+#more-button {
+    border: none;
+    font-size: 16px;
+    text-decoration: underline;
+
+    cursor: pointer;
+
+    background-color: transparent;
+    color: #999;
+}
+
+#more-button.more-less-light:hover,
+#less-button.more-less-light:hover {
+    transition: 0.3s;
+    color: #333;
+}
+
+#more-button.more-less-darck:hover,
+#less-button.more-less-darck:hover {
+    transition: 0.3s;
+    color: #eee;
+}
+
+#less-button.show {
+    display: inline;
+}
+#more-button.mask {
+    display: none;
+}
+
+#masked-p {
+    display: none;
+}
+
+#masked-p.show {
+    display: block;
+}
+
+#setting {
+    width: 20px;
+
+    margin-right: 65px;
+    margin-left: auto;
+}
+
+#setting #mode-button {
+    background-color: #333;
+    color: #f5e9e1;
+
+    border-radius: 10px;
+    width: 70px;
+}
+
+#setting #mode-button.darck {
+    background-color: #f5e9e1;
+    color: #333;
+}
+
+#color-buttons {
+    display: flex;
+    flex-direction: row;
+    gap: 2px;
+
+    margin: 2px auto;
+}
+
+#color-button-default {
+    background-color: black;
+}
+
+#color-button-default.darck {
+    background-color: white;
+}
+
+#setting #color-buttons button {
+    border-radius: 10px;
+    width: 70px;
+    padding: 10px;
+    /* width: 5px; */
+}
+
+#color-button-brown {
+    background-color: brown;
+}
+
+#color-button-purple {
+    background-color: purple;
+}
+
+p.darck {
+    color: #eee;
+}
+
+#start {
+    margin-top: 70px;
+}
+
+nav {
+    margin: 0;
+    padding: 0;
+}
+
+nav ul {
+    list-style-type: none;
+    padding: 15px;
+    margin: 0px;
+
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    gap: 10px;
+
+    background-color: #333;
+
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0; /* Forces it to stretch to the right edge */
+}
+
+nav ul li {
+    margin: 5px 0;
+}
+
+nav li a.active {
+    background: green;
+}
+
+nav li a {
+    text-decoration: none;
+    padding: 10px 15px;
+    margin: 10px 0;
+    border-radius: 5px;
+
+    color: white;
+}
+
+nav li a:hover {
+    color: white;
+    transition: 0.3s;
+}
+
+#uni-link {
+    color: #524d44;
+}
+
+#uni-link.darck {
+    color: #eee;
+}
+
+a:hover {
+    color: red;
+}
+
+/* .gallery, */
+div.introduction,
+.presentation,
+.hobbies,
+.contact {
+    max-width: 600px;
+
+    margin: 10px auto;
+}
+
+div.introduction img {
+    width: 100%;
+    height: 100%;
+
+    margin: 30px auto;
+    border-radius: 10px;
+}
+
+div.introduction h1,
+.presentation h1,
+.hobbies h1,
+.contact h1,
+.gallery h1 {
+    /* color: #4b5563; */
+    /* color: darkblue; */
+    margin-top: 0px;
+    margin-bottom: 10px;
+}
+
+div.introduction p,
+.presentation p,
+.presentation ul {
+    line-height: 1.4;
+    font-size: 110%;
+}
+
+.presentation ul {
+    margin-left: 0;
+
+    list-style-position: inside;
+    padding: 0;
+}
+
+section.inspquote {
+    max-width: 600px;
+
+    margin: 20px auto;
+    margin-bottom: 50px;
+}
+
+.timetable table {
+    border-collapse: collapse;
+    table-layout: fixed;
+    width: 100%;
+}
+.timetable table td {
+    padding: 10px;
+    margin: 10px auto;
+}
+
+.timetable {
+    max-width: 800px;
+    margin: 10px auto;
+}
+
+footer {
+    /* color: #4b5563; */
+    color: #4b556a;
+    /* background-color: #f1f5f9; */
+    max-width: 600px;
+
+    margin: 10px auto;
+}
+
+.gallery h1 {
+    width: 300px;
+
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.gallerygrid {
+    margin: 12px auto;
+    padding: 0px;
+
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+
+    max-width: 900px;
+}
+
+div img {
+    width: 100%;
+    height: 100%;
+
+    cursor: pointer;
+
+    border-radius: 10px;
+    transition: 0.3s;
+
+    /* box-shadow: 5px 2px 2px 2px; */
+}
+
+div img:hover {
+    scale: 1.05;
+}
+
+#clock {
+    font-size: 20px; /* Slightly reduced size to fit nicely on the side */
+    font-weight: bold;
+    color: #333;
+    margin-top: 20px;
+    margin-bottom: 0px;
+    margin-left: 20px;
+}
+
+#clock.darck {
+    color: #f5e9e1;
+}
+
+@media (max-width: 600px) {
+    .gallerygrid {
+        grid-template-columns: 1fr;
+    }
+
+    nav ul {
+        flex-direction: column;
+        gap: 15px;
+        align-items: center;
+    }
+}
